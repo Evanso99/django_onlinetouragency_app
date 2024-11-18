@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+  <head>
+    <title>{{ destination.name }}</title>
+    <link href="/static/css/destination_detail.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <section id="destination_detail">
+     <div class="destination">
+      <h1>{{ destination.name }}</h1>
+      <p>{{ destination.city }}</p>
+      <p>{{ destination.description }}</p>
+      <img src="{{ destination.image.url }}">
+      <p>Price: ${{ tour.price }}</p>
+      <a href="{% url 'book_tour' pk=destination.pk %}">Book this tour</a>
+
+     </div>
+
+    </section>
+   
+  </body>
+</html>

@@ -1,0 +1,16 @@
+
+{% block content %}
+  <h2>Booking Confirmation</h2>
+  <p>Thank you for booking a tour to {{ destination.name }}!</p>
+  <p>Your booking details:</p>
+  <ul>
+    <li><strong>Tour:</strong> {{ booking.name }}</li>
+    <li><strong>Date:</strong> {{ tour.date }}</li>
+    <li><strong>Total Price:</strong> {{ tour.price }}</li>
+  </ul>
+  {% if booking.paid %}
+    <p class="text-success">Your payment has been successfully processed!</p>
+  {% else %}
+    <p class="text-warning">Your payment is still pending. Please check your email for further instructions.</p>
+  {% endif %}
+{% endblock %}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>Edit Account</title>
+    <link href="/static/css/account.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Edit Account</h1>
+      <form id="edit-account-form" method="POST">
+        {% csrf_token %}
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" value="{{ user.username }}" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" value="{{ user.email }}" required>
+        <button type="submit">Save Changes</button>
+      
+      <script>
+        const form = document.querySelector('#edit-account-form');
+        const submitBtn = document.querySelector('#submit-btn');
+      
+        form.addEventListener('submit', async (event) => {
+          event.preventDefault();
+          submitBtn.disabled = true;
+          // get form data
+          const formData = new FormData(form);
+          // send form data to server using fetch API
+          const response = await fetch(form.action, {
+            method: form.method,
+            body: formData
+          });
+          if (response.ok) {
+            // if form submission successful, update page with new data
+            const updatedHtml = await response.text();
+            const updatedPage = document.createElement('html');
+            updatedPage.innerHTML = updatedHtml;
+            const newForm = updatedPage.querySelector('#edit-account-form');
+            form.parentNode.replaceChild(newForm, form);
+            submitBtn.disabled = false;
+          } else {
+            // if form submission failed, display error message
+            const errorHtml = await response.text();
+            const errorPage = document.createElement('html');
+            errorPage.innerHTML = errorHtml;
+            const errorMessage = errorPage.querySelector('.error');
+            const errorContainer = document.querySelector('#error-container');
+            errorContainer.innerHTML = errorMessage.innerHTML;
+            submitBtn.disabled = false;
+          }
+        });
+      </script>
+      <a href="{% url 'home'%}">Go back home</a>
+    </div>
+  </body>
+</html>

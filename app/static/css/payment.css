@@ -1,0 +1,33 @@
+form {
+    margin: auto;
+    width: 50%;
+  }
+  
+  h2 {
+    text-align: center;
+  }
+  
+  .stripe-button-el {
+    display: block;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 400px;
+    height: 40px;
+    background-color: #6772e5;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 40px;
+    text-align: center;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .stripe-button-el:hover {
+    background-color: #5469d4;
+  }
+  
+  .text-danger {
+    color: red;
+  }
+  

@@ -1,0 +1,23 @@
+
+        /* Basic page styling */
+        body {
+            background-color: #f1f1f1;
+        }
+        .container {
+            margin-top: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+        p {
+            font-size: 1.5em;
+            margin-top: 0;
+        }
+        a {
+            color: blue;
+        }

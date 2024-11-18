@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link href="/static/css/home.css" rel="stylesheet" type="text/css">
+    
+</head>
+<body>
+  <section id="above_nav">
+   
+  </section>
+  <nav>
+    <ul>
+      <li><a href="{% url 'home'%}">Home</a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle">City tours </a>
+        <ul class="dropdown-menu">
+          <li class="dropup">
+            <a href="#" class="dropdown-togglel">Paris</a>
+            <ul class="dropup-menu">
+              <li><a href="{% url 'destination_detail' pk=2 %}">Louvre Museum</a></li>
+              <li><a href="{% url 'destination_detail' pk=3 %}">Eiffel Tower</a></li>
+            </ul>
+          </li>
+          <li class="dropup">
+            <a href="#" class="dropdown-toggle">Rome</a>
+            <ul class="dropup-menu">
+              <li><a href="{% url 'destination_detail' pk=4 %}">Piazza Navona</a></li>
+              <li><a href="{% url 'destination_detail' pk=5 %}">Ancient Roman ruins</a></li>
+            </ul>
+          </li>
+          <li class="dropup">
+            <a href="#" class="dropdown-toggle">Oslo</a>
+            <ul class="dropup-menu">
+              <li><a href="{% url 'destination_detail' pk=6 %}">Oslo Opera House</a></li>
+              <li><a href="{% url 'destination_detail' pk=7 %}">Viking Ship Museum</a></li>
+            </ul>
+          </li>
+          <li class="dropup">
+            <a href="#" class="dropdown-toggle">Copenhagen</a>
+            <ul class="dropup-menu">
+              <li><a href="{% url 'destination_detail' pk=8 %}">Tivoli Gardens</a></li>
+              <li><a href="{% url 'destination_detail' pk=9 %}">The Round Tower</a></li>
+            </ul>
+          </li>
+          <li class="dropup">
+            <a href="#" class="dropdown-toggle">Geneva</a>
+            <ul class="dropup-menu">
+              <li><a href="{% url 'destination_detail' pk=10 %}">Musée d'Art et d'Histoire</a></li>
+              <li><a href="{% url 'destination_detail' pk=11 %}">The Flower Clock</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      
+    
+      <li><a href="{% url 'about'%}">About Us</a></li>
+      <li><a href="{% url 'contact' %}">Contact</a></li>
+      <li><a href="{% url 'account'%}" class="alink"> Accounts</a></li>
+      <li><a href="{% url 'logout'%}" class="blink"><button><b>LOGOUT</b></button></a></li>
+    </ul>
+  </nav>
+  
+  
+    
+    <div class="slider">
+      <div class="slide active">
+        <img src="{% static 'images/upendo.jpg'%}" alt="Slide 1">
+        <p class= "head1">Explore the iconic Europe attractions with expert guides from the comfort of your home</p>
+        <a href="{% url 'destination_detail' pk=1  %}"><button class="btn"><b>Book your tour</b></button></a>
+      </div> 
+      
+      
+      <div class="controls">
+        <div class="control active"></div>
+        <div class="control"></div>
+        <div class="control"></div>
+      </div>
+    </div>
+    <script src="{% static 'js/base.js' %}"></script>
+    <h2 class="head2">Explore amazing diverse Attractions </h2>
+    <p class="head3">Europe is an amazing and diverse destination that offers something for everyone. With its rich history, stunning architecture, delicious cuisine, breathtaking landscapes, and vibrant culture, it's no wonder that millions of travelers flock to Europe every year.</p>
+    <section id="quick-tours">
+      <div class="tour_sites">
+        <img src="{% static 'images/tour2.jpg' %}" alt="tour 1">
+        <h3>plitvice lakes national park</h3>
+        <p>This is a tour site located in Karlovac, Croatia. It is one of the oldest and largest national parks in Croatia.</p>
+        <a href="{% url 'destination_detail' pk=11 %}" class="button">Explore</a>
+      </div>
+      <div class="tour_sites">
+        <img src="{% static 'images/tour1.jpg' %}" alt="tour 2">
+        <h3>Warwick Castle</h3> 
+        <p>Warwick Castle is a medieval castle developed from a wooden fort. It's located in Warwickshire, England, situated on a meander of the River Avon. </p>
+        <a href="{% url 'destination_detail' pk=12 %}" class="button">Explore</a>
+      </div>
+      <div class="tour_sites">
+        <img src="{% static 'images/tour3.jpg' %}" alt="tour 3">
+        <h3>Memorial to the Murdered Jews of Europe</h3>
+        <p>The Memorial to the Murdered Jews of Europe, also known as the Holocaust Memorial, is a memorial in Berlin to the Jewish victims of the Holocaust, designed by architect Peter Eisenman and Buro Happold.</p>
+        <a href="{% url 'destination_detail' pk=13 %}" class="button">Explore</a>
+      </div>
+    </section>
+    <section id="about-us">
+			<h2>About Us</h2>
+			<p>Welcome to our Europe Cities tourism site! We are passionate about showcasing the beauty of our region to visitors from all over the world. Our experienced team is dedicated to providing the highest quality tours and experiences, while promoting sustainable and responsible travel.</p>
+			<a href="{% url 'about'%}" class="button">Learn More</a>
+		</section>
+	<footer>
+		<p>&copy; 2023 Virtual Tourism. All rights reserved.</p>
+	</footer>
+
+</body>
+</html>

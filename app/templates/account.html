@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+    <title>My Account</title>
+    <link href="/static/css/account.css" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Welcome, {{ user.username }}!</h1>
+      <p>Here are your account details:</p>
+      <ul>
+        <li>Username: {{ user.username }}</li>
+        <li>Email: {{ user.email }}</li>
+      </ul>
+      <p>Click <a href="{% url 'edit_account' %}">account</a> to edit your account details.</p>
+      <p>Click <a href="{% url 'logout' %}">here</a> to log out.</p>
+
+    </div>
+    
+  </body>
+</html>

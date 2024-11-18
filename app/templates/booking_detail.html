@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+  <head>
+    <title>{{ booking.tour.destination.name }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/booking_detail.css' %}">
+  </head>
+  <body>
+    <section id="booking_detail">
+      <div class="booking">
+       <h1>{{ booking.tour.destination.name }}</h1>
+       <p>Name: {{ booking.name }}</p>
+       <p>Email: {{ booking.email }}</p>
+       <p>Phone Number: {{ booking.phone_number }}</p>
+       <p>Date Booked: {{ booking.date_booked }}</p>
+      </div>
+    </section>
+  </body>
+</html>

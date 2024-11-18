@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{%load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Virtual Tourism</title>
+    <link rel="stylesheet" href="{% static 'css/welcome.css' %}">
+</head>
+<body>
+    <div class="jumbotron">
+        <h1 class="display-4">Welcome to Online tours and vacation planner!</h1>
+        <p class="lead">Explore the world from the diverse kinds of tours and vacation.</p>
+       
+        <p>Get started by signing up or logging in below:</p>
+        <a class="btn btn-primary btn-lg" href="{% url 'signup' %}" role="button"><b>Sign up</b></a>
+        <a class="btn btn-secondary btn-lg" href="{% url 'login' %}" role="button"><b>Log in</b></a>
+    </div>
+</body>
+</html>

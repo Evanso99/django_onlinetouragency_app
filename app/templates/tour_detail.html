@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%load static%}
+<html>
+  <head>
+    <title>{{ tour.destination.name }}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/tour_detail.css' %}">
+  </head>
+  <body>
+    <h1>{{ tour.destination.name }}</h1>
+    <p>Guide: {{ tour.guide }}</p>
+    <p>Date: {{ tour.date }}</p>
+    <p>Time: {{ tour.time }}</p>
+    <p>Price: {{ tour.price }}</p>
+  </body>
+</html>
